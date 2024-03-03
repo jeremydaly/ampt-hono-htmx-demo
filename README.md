@@ -20,4 +20,4 @@ To populate some dummy data, run the following command from within the Ampt CLI:
 import
 ```
 
-Check out more information about Ampt at getampt.com.
+Check out more information about Ampt at [getampt.com](https://www.getampt.com).

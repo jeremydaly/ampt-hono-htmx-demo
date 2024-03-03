@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="content" class="border p-2">
+  {% block users %}
+  {% for user in users %}
+  {% block user %}
+  {% if edit %}
+  <form id="user-{{ user.id }}" hx-put="/users/{{ user.id }}" hx-target="#user-{{ user.id }}" hx-swap="outerHTML"
+    class="border-b p-2 bg-red-100">
+    <input type="text" name="name" value="{{ user.name }}">
+
+    <button class="bg-blue-500 rounded text-white px-3 py-1">SAVE</button>
+    <button hx-get="/users/{{ user.id }}" hx-target="#user-{{ user.id }}" hx-swap="outerHTML"
+      class="bg-orange-500 rounded text-white px-3 py-1">CANCEL</button>
+  </form>
+  {% else %}
+  <div id="user-{{ user.id }}" class="border-b p-2">{{ user.name }}
+    <button hx-get="/users/{{ user.id }}/edit" hx-target="#user-{{ user.id }}" hx-swap="outerHTML"
+      class="bg-green-500 rounded text-white px-3 py-1">EDIT</button>
+  </div>
+  {% endif %}
+  {% endblock %}
+  {% endfor %}
+  {% endblock %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+[
+  {
+    "key": "users:123",
+    "value": {
+      "id": "123",
+      "name": "John Doe"
+    }
+  },
+  {
+    "key": "users:1234",
+    "value": {
+      "id": "1234",
+      "name": "Jane Doe"
+    }
+  },
+  {
+    "key": "users:12345",
+    "value": {
+      "id": "12345",
+      "name": "Sam Smith"
+    }
+  }
+]

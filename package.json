@@ -1,0 +1,36 @@
+{
+  "name": "ampt-hono-htmx-demo",
+  "version": "1.0.0",
+  "description": "Ampt demo that uses Hono and HTMX",
+  "private": true,
+  "main": "index.tsx",
+  "type": "module",
+  "scripts": {
+    "start": "ampt",
+    "ampt:dev": "run-p dev:*",
+    "ampt:build": "postcss ./css/main.css -o static/css/styles.css && npm run ampt:precompile",
+    "ampt:precompile": "fraglates '**/*.{html,njk}' -p ./templates -o ./precompiled",
+    "dev:css": "postcss ./css/main.css -o static/css/styles.css --watch",
+    "dev:templates": "fraglates '**/*.{html,njk}' -p ./templates -o ./precompiled --watch"
+  },
+  "dependencies": {
+    "@ampt/data": "^1.0.18",
+    "fraglates": "^0.3.1",
+    "hono": "^3"
+  },
+  "files": [
+    "*"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.11.8",
+    "autoprefixer": "^10.4.17",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.33",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.1"
+  },
+  "ampt": {
+    "org": "demo",
+    "app": "ssr-demox"
+  }
+}
